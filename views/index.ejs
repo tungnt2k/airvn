@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Air VN</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Animate CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"
+        type="text/css" />
+
+
+    <link rel="shortcut icon" href="/favicon.png" type="image/png">
+</head>
+
+<body class="d-flex flex-column h-100">
+    <style>
+        .rotate135 {
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+            transform: rotate(135deg);
+        }
+    </style>
+    <header class="flex-shrink-0 container mt-5">
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+            <a class="navbar-brand wow bounceInLeft" href="/">
+                <h5><b>Air<sup>VN</sup></b></h5>
+            </a>
+
+            <div class="collapse navbar-collapse wow bounceInRight">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link " href="/about">About</a>
+                    <a class="nav-item nav-link " href="https://github.com/tungnt2k"><i
+                            class="fab fa-1x fa-github"></i></a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="flex-shrink-0 container mt-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 text-left mt-4 wow bounceInLeft">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    TP Hà Nội
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#accordion">
+                            <div class="card-body">
+                                <p><a href="/detail?state=hanoi&city=Cau Giay">Cầu Giấy</a></p>
+                                <p><a href="/detail?state=hanoi&city=Hanoi">Hà Nội</a></p>
+                                <p><a href="/detail?state=hanoi&city=Quoc Oai">Quốc Oai</a></p>
+                                <p><a href="/detail?state=hanoi&city=Soc Son">Sóc Sơn</a></p>
+                                <p><a href="/detail?state=hanoi&city=Tay Ho">Tây Hồ</a></p>
+                                <p><a href="/detail?state=hanoi&city=Thach That">Thạch Thất</a></p>
+                                <p><a href="/detail?state=hanoi&city=Trau Quy">Trâu Quỳ</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    TP Hồ Chí Minh
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <p><a href="/detail?state=Ho Chi Minh City&city=Ho Chi Minh City">TP Hồ Chí Minh</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center mt-4 wow bounceInUp">
+                <div class="container">
+                    <div class="card text-center ">
+                        <div class="card-header">
+                            <b><%=data.data.city%></b>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"><img src="/temperature.svg" style="width:100px" alt="temperature">
+                                </div>
+                                <div class="col">
+                                    <div class="row">Nhiệt độ</div>
+                                    <div class="row">
+                                        <p><%=data.data.current.weather.tp%><sup>o</sup>C</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="/<%=data.data.current.weather.ic%>.png" style="width:50px" alt="">
+
+                            <div class="row">
+                                <div class="col"><img src="/humidity.svg" style="width:50px" alt="humidity"></div>
+                                <div class="col">
+                                    <div class="row">Độ ẩm</div>
+                                    <div class="row"><%=data.data.current.weather.hu%>%</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><img src="/wind.svg" class="rotate135" style="width:50px" alt="wind">
+                                </div>
+                                <div class="col">
+                                    <div class="row">Tốc độ gió</div>
+                                    <div class="row"><%=(data.data.current.weather.wd)/10%> km/h</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><img src="/pressure.svg" style="width:50px" alt="pressure"></div>
+                                <div class="col">
+                                    <div class="row">Áp suất không khí</div>
+                                    <div class="row"><%=data.data.current.weather.pr%> mb</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted">
+                            from AirVisual
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center mt-4 wow bounceInRight">
+                <div class="container">
+                    <div class="card text-center ">
+                        <div class="card-header">
+                            Chất lượng không khí tại <b><%=data.data.city%></b>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"><img src="/<%=aqi.ico%>" style="width:100px" alt="aqi">
+                                </div>
+                                <div class="col">
+                                    <div class="row">Chỉ số không khí</div>
+                                    <div class="row">
+                                        <p><%=aqi.aqi%> <sub>US AQI</sub></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text">
+                                <p><%=aqi.title%></p>
+                                <p><%=aqi.mes%></p>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted">
+                            from AirVisual
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <footer class="mt-auto py-3 text-center wow bounceInUp">
+
+            <small class="text-muted mb-2">
+                <i class="fas fa-code"></i> with <i class="fas fa-heart"></i>
+                by <strong>Thanh Tung</strong>
+            </small>
+
+            <div class="container-fluid justify-content-center">
+                <a class="social mx-1" href="mailto:tungnt2k@gmail.com" style="color: #6c757d"
+                    onmouseover="this.style.color='#db4437'" onmouseout="this.style.color='#6c757d'">
+                    <i class="fas fa-envelope fa-1x"></i>
+                </a>
+                <a class="social mx-1" href="https://www.facebook.com/tung.thanh19122k" style="color: #6c757d"
+                    onmouseover="this.style.color='#3b5998'" onmouseout="this.style.color='#6c757d'">
+                    <i class="fab fa-facebook fa-1x"></i>
+                </a>
+                <a class="social mx-1" href="https://github.com/tungnt2k" style="color: #6c757d"
+                    onmouseover="this.style.color='#333333'" onmouseout="this.style.color='#6c757d'">
+                    <i class="fab fa-github fa-1x"></i>
+                </a>
+            </div>
+
+        </footer>
+        <!-- GitHub Buttons -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+        <!-- jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Popper.js CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
+        <!-- Bootstrap JS CDN -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- wow.js CDN & Activation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+        <script> new WOW().init(); </script>
+    </footer>
+
+</body>
+
+</html>
