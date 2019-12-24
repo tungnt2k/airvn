@@ -7,7 +7,7 @@ function aqius(aqi) {
     if (aqi < 51) {
         aqius = {
             aqi: aqi,
-            ico: 'level1.png',
+            ico: 'level1.PNG',
             title: 'Tốt',
             mes: 'Chất lượng không khí là tốt và không gây ra rủi ro cho sức khỏe.'
         }
@@ -15,7 +15,7 @@ function aqius(aqi) {
     else if (aqi < 101) {
         aqius = {
             aqi: aqi,
-            ico: 'level2.png',
+            ico: 'level2.PNG',
             title: 'Vừa phải',
             mes: 'Chất lượng không khí có thể chấp nhận được và gây ra ít rủi ro cho sức khỏe. Những người nhạy cảm nên tránh hoạt động ngoài trời vì họ có thể gặp các triệu chứng hô hấp.'
         }
@@ -23,7 +23,7 @@ function aqius(aqi) {
     else if (aqi < 151) {
         aqius = {
             aqi: aqi,
-            ico: 'level3.png',
+            ico: 'level3.PNG',
             title: 'Không tốt cho những người nhạy cảm',
             mes: 'Có nguy cơ gặp phải các vấn đề kích thích và hô hấp.'
         }
@@ -31,7 +31,7 @@ function aqius(aqi) {
     else if (aqi < 201) {
         aqius = {
             aqi: aqi,
-            ico: 'level4.png',
+            ico: 'level4.PNG',
             title: 'Không tốt',
             mes: 'Làm ảnh hưởng đến tim, phổi, đặc biệt đối với các nhóm người nhạy cảm.'
         }
@@ -39,7 +39,7 @@ function aqius(aqi) {
     else if (aqi < 251) {
         aqius = {
             aqi: aqi,
-            ico: 'level5.png',
+            ico: 'level5.PNG',
             title: 'Rất không tốt',
             mes: 'Mọi người sẽ bị ảnh hưởng đáng kể. Những người nhạy cảm nên ở trong nhà và hạn chế các hoạt động.'
         }
@@ -47,7 +47,7 @@ function aqius(aqi) {
     else {
         aqius = {
             aqi: aqi,
-            ico: 'level6.png',
+            ico: 'level6.PNG',
             title: 'Độc hại',
             mes: 'Mọi người có nguy cơ cao gặp phải các kích thích mạnh và ảnh hưởng xấu đến sức khỏe, có thể gây ra các bệnh khác. Mọi người nên ở trong nhà.'
         }
